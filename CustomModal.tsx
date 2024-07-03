@@ -31,7 +31,7 @@ const CustomModal: React.FC<IModalProps> = ({ id, children, isVisible }) => {
     }, [isVisible]);
 
     return isVisible ? (
-        <Animated.View style={[styles.overlay, { opacity }]}>
+        <Animated.View style={[styles.container, { opacity }]}>
             <TouchableWithoutFeedback onPress={() => closeModal(id)}>
                 <View style={styles.modalContent}>
                     {children}
@@ -42,13 +42,13 @@ const CustomModal: React.FC<IModalProps> = ({ id, children, isVisible }) => {
 };
 
 const styles = StyleSheet.create({
-    overlay: {
+    container: {
         position: 'absolute',
         top: 0,
         left: 0,
         width,
         height,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: '#00000050',
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 1000,
